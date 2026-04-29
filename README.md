@@ -47,7 +47,7 @@ I'm a passionate developer focused on building robust, scalable applications. Cu
 ## 🌐 Connect With Me
 
 - **Portfolio:** [portfolio.flinkeo.online](http://portfolio.flinkeo.online)
-- **LinkedIn:** [linkedin.com/in/abushaidislam](https://linkedin.com/in/abushaidislam) *(add your link)*
+- **LinkedIn:** [linkedin.com/in/abushaidislam](www.linkedin.com/in/abushaid-islam-said-5073a4320) 
 - **Email:** abushaidislam7@gmail.com
 
 ---
