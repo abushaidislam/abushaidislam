@@ -227,7 +227,8 @@ const abushaid = {
 
 
 
-<h2 class="sr-only">NextBlling logo reveal — particles from screen edges converge and form the text letter by letter</h2>
+<div>
+  <h2 class="sr-only">NextBlling logo reveal — particles from screen edges converge and form the text letter by letter</h2>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:#000; display:flex; align-items:center; justify-content:center; min-height:420px; }
@@ -418,3 +419,5 @@ function frame(ts) {
 
 requestAnimationFrame(frame);
 </script>
+
+</div>
