@@ -223,3 +223,198 @@ const abushaid = {
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=120&section=footer&text=Thanks+for+visiting!+Let's+build+something+amazing+🚀&fontSize=14&fontColor=a78bfa&fontAlignY=65&animation=fadeIn"/>
 
 </div>
+
+
+
+
+<h2 class="sr-only">NextBlling logo reveal — particles from screen edges converge and form the text letter by letter</h2>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#000; display:flex; align-items:center; justify-content:center; min-height:420px; }
+canvas { display:block; width:100%; max-width:900px; }
+</style>
+<canvas id="c"></canvas>
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const W = 900, H = 480;
+canvas.width = W; canvas.height = H;
+
+const LOGO = 'NextBlling';
+
+function sampleTextPixels() {
+  const tc = document.createElement('canvas');
+  tc.width = W; tc.height = H;
+  const tx = tc.getContext('2d');
+  tx.fillStyle = '#fff';
+  tx.font = '900 96px Arial Black, Impact, sans-serif';
+  tx.textAlign = 'center';
+  tx.textBaseline = 'middle';
+  tx.fillText(LOGO, W/2, H/2);
+  const data = tx.getImageData(0, 0, W, H).data;
+  const pts = [];
+  for (let y = 2; y < H; y += 3) {
+    for (let x = 2; x < W; x += 3) {
+      if (data[(y * W + x) * 4 + 3] > 100) pts.push([x + (Math.random()-0.5)*2, y + (Math.random()-0.5)*2]);
+    }
+  }
+  return pts;
+}
+
+const textPts = sampleTextPixels();
+
+function rndEdge() {
+  const e = Math.floor(Math.random() * 4);
+  if (e === 0) return [Math.random()*W, -30 - Math.random()*60];
+  if (e === 1) return [W + 30 + Math.random()*60, Math.random()*H];
+  if (e === 2) return [Math.random()*W, H + 30 + Math.random()*60];
+  return [-30 - Math.random()*60, Math.random()*H];
+}
+
+const particles = textPts.map(([tx, ty]) => {
+  const [sx, sy] = rndEdge();
+  return {
+    sx, sy, x: sx, y: sy,
+    tx, ty,
+    sz: 0.6 + Math.random()*1.2,
+    op: 0.6 + Math.random()*0.4,
+    spd: 0.5 + Math.random()*0.5,
+    sw: (Math.random()-0.5)*2.5,
+    ph: Math.random()*Math.PI*2,
+    delay: Math.random()*0.6
+  };
+});
+
+let grainFrames = [];
+function buildGrain() {
+  for (let f = 0; f < 6; f++) {
+    const gc = document.createElement('canvas');
+    gc.width = W; gc.height = H;
+    const gx = gc.getContext('2d');
+    const id = gx.createImageData(W, H);
+    const d = id.data;
+    for (let i = 0; i < d.length; i += 4) {
+      const v = Math.floor(Math.random()*255);
+      d[i] = d[i+1] = d[i+2] = v; d[i+3] = Math.floor(Math.random()*22 + 6);
+    }
+    gx.putImageData(id, 0, 0);
+    grainFrames.push(gc);
+  }
+}
+buildGrain();
+
+let gfi = 0, startTime = null;
+
+function easeInOut(t) { return t<0.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
+function easeOut(t) { return 1-Math.pow(1-t, 4); }
+
+function drawBg() {
+  ctx.fillStyle = '#060606';
+  ctx.fillRect(0, 0, W, H);
+  ctx.save();
+  ctx.globalAlpha = 0.18;
+  for (let i = 0; i < 80; i++) {
+    ctx.fillStyle = `rgb(${15+Math.random()*18},${15+Math.random()*18},${15+Math.random()*18})`;
+    ctx.fillRect(Math.random()*W, Math.random()*H, Math.random()*4, Math.random()*4);
+  }
+  ctx.restore();
+}
+
+function drawGlitch(prog) {
+  if (Math.random() > 0.55) return;
+  for (let i = 0; i < 4 + Math.floor(Math.random()*5); i++) {
+    const sy = Math.floor(Math.random()*H);
+    const sh = 1 + Math.floor(Math.random()*8);
+    const ox = Math.floor((Math.random()-0.5)*50*prog);
+    try {
+      const d = ctx.getImageData(0, sy, W, sh);
+      ctx.putImageData(d, ox, sy);
+    } catch(e) {}
+  }
+  if (Math.random() < 0.5) {
+    ctx.fillStyle = `rgba(255,255,255,${0.02+Math.random()*0.07})`;
+    ctx.fillRect(0, Math.random()*H, W, Math.random()*3);
+  }
+}
+
+function lerp(a, b, t) { return a + (b-a)*t; }
+
+function frame(ts) {
+  if (!startTime) startTime = ts;
+  const t = (ts - startTime) / 1000;
+
+  drawBg();
+
+  const gatherDur = 3.8;
+
+  particles.forEach(p => {
+    const local = Math.max(0, t - p.delay * 0.5);
+    const pg = Math.min(1, local / (gatherDur * p.spd));
+    const prog = easeInOut(pg);
+
+    const swirl = Math.pow(1 - prog, 1.5) * 60;
+    const angle = t * p.sw + p.ph;
+
+    const cx = lerp(p.sx, p.tx, prog) + Math.cos(angle) * swirl;
+    const cy = lerp(p.sy, p.ty, prog) + Math.sin(angle) * swirl;
+
+    const appear = Math.min(1, local / 0.6);
+    const alpha = appear * p.op;
+
+    // Settled particles glow slightly after convergence
+    const settled = prog > 0.97;
+    const glow = settled ? 0.85 + Math.sin(t * 3 + p.ph) * 0.12 : 1;
+    const sz = p.sz * (settled ? 0.9 + Math.sin(t*2.5+p.ph)*0.15 : 1);
+
+    ctx.fillStyle = `rgba(${220+Math.floor(Math.random()*20)},${220+Math.floor(Math.random()*20)},${220+Math.floor(Math.random()*20)},${alpha*glow})`;
+    ctx.beginPath();
+    ctx.arc(cx, cy, sz, 0, 6.283);
+    ctx.fill();
+  });
+
+  // Glitch burst during mid-convergence
+  if (t >= 1.8 && t < 3.6) {
+    drawGlitch((t - 1.8) / 1.8);
+  }
+
+  // Scanlines always subtle
+  ctx.save();
+  ctx.globalAlpha = 0.07;
+  ctx.fillStyle = '#000';
+  for (let y = 0; y < H; y += 3) ctx.fillRect(0, y, W, 1);
+  ctx.restore();
+
+  // Light flicker on final lock
+  if (t >= 3.4 && t < 4.0) {
+    const ft = (t - 3.4) / 0.6;
+    const flk = Math.max(0, Math.sin(t * 55) * 0.04 * (1 - ft));
+    ctx.fillStyle = `rgba(255,255,255,${flk})`;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  // Ambient floating dust after settle
+  if (t > 4.0) {
+    ctx.save();
+    ctx.globalAlpha = 0.25;
+    for (let i = 0; i < 25; i++) {
+      const dx = (Math.random()-0.5)*700 + W/2;
+      const dy = (Math.random()-0.5)*200 + H/2;
+      ctx.fillStyle = `rgba(180,180,180,${Math.random()})`;
+      ctx.fillRect(dx, dy, Math.random()*1.5, Math.random()*1.5);
+    }
+    ctx.restore();
+  }
+
+  // Film grain composite
+  ctx.save();
+  ctx.globalCompositeOperation = 'soft-light';
+  ctx.globalAlpha = 0.55;
+  ctx.drawImage(grainFrames[gfi % 6], 0, 0);
+  ctx.restore();
+  gfi++;
+
+  requestAnimationFrame(frame);
+}
+
+requestAnimationFrame(frame);
+</script>
