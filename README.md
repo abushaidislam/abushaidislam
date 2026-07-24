@@ -1,98 +1,136 @@
-<!-- ===================================================================== -->
-<!--  ABUSHAID ISLAM — GitHub Profile · Modern Monochrome                   -->
-<!--  Header art:  assets/header.svg  (commit this file to your repo)      -->
-<!-- ===================================================================== -->
 
 <p align="center">
   <img src="./assets/hero.png" width="100%" alt="Abushaid Islam — Full-Stack Developer" />
 </p>
 
 <p align="center">
-  <a href="https://portfolio.flinkeo.online"><img src="https://img.shields.io/badge/Portfolio-000000?style=flat-square&logoColor=white" alt="Portfolio" /></a>
-  <a href="https://linkedin.com/in/abushaidislam"><img src="https://img.shields.io/badge/LinkedIn-000000?style=flat-square&logoColor=white" alt="LinkedIn" /></a>
-  <a href="mailto:abushaidislam7@gmail.com"><img src="https://img.shields.io/badge/Email-000000?style=flat-square&logoColor=white" alt="Email" /></a>
-  <img src="https://komarev.com/ghpvc/?username=abushaidislam&style=flat-square&color=000000&label=Views" alt="Profile views" />
+  <a href="https://portfolio.flinkeo.online"><b>PORTFOLIO</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://linkedin.com/in/abushaidislam"><b>LINKEDIN</b></a>
+  &nbsp;·&nbsp;
+  <a href="mailto:abushaidislam7@gmail.com"><b>EMAIL</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://devhub.flinkeo.online"><b>DEVHUB</b></a>
 </p>
 
 <br />
 
-> I turn product ideas into reliable software — interface, API, data layer,
-> deployment, and the monitoring that keeps it all alive.
+## About
 
-<br />
-
-### — About
+I build scalable web products from interface to infrastructure. My current focus is **TypeScript**, production-ready **AI integrations**, developer tools, and B2B SaaS.
 
 ```ts
 const abushaid = {
-  location : "Dhaka, Bangladesh",
-  role     : "Full-Stack Developer",
-  focus    : ["TypeScript", "AI Integration", "B2B SaaS", "Scalable APIs"],
-  building : "B2B platforms & SaaS products @ flinkeo.online",
-  learning : ["Advanced TypeScript", "Production AI", "Cloud Architecture"],
-  openTo   : ["Collaboration", "Freelance", "Open Source"],
-  belief   : "Ship products that matter — not just impressive demos.",
+  location: "Dhaka, Bangladesh",
+  role: "Full-Stack Developer",
+  focus: ["TypeScript", "AI", "Developer Tools", "B2B SaaS"],
+  currentlyBuilding: ["DevHub Toolkit", "Renma"],
+  openTo: ["Collaboration", "Freelance", "Open Source"],
+  goal: "Ship products that solve real problems.",
 };
 ```
 
 <br />
 
-### — Stack
+## Stack
 
-|              |                                                        |
-| :----------- | :----------------------------------------------------- |
-| **Languages**  | `TypeScript` · `JavaScript` · `HTML` · `CSS`         |
-| **Frameworks** | `React` · `Next.js` · `Node.js`                       |
-| **Data**       | `PostgreSQL` · `MongoDB` · `Redis`                    |
-| **Cloud**      | `AWS` · `Vercel` · `Docker`                           |
-| **Tooling**    | `Git` · `GitHub` · `Postman` · `Linux`                |
+| | |
+| :-- | :-- |
+| **Languages** | `TypeScript` · `JavaScript` · `HTML` · `CSS` |
+| **Frontend** | `React` · `Next.js` |
+| **Backend** | `Node.js` · `REST APIs` |
+| **Data** | `PostgreSQL` · `MongoDB` · `Redis` |
+| **Infrastructure** | `AWS` · `Vercel` · `Docker` · `Linux` |
+| **Workflow** | `Git` · `GitHub` · `Postman` |
 
 <br />
 
-### — Selected Work
+## Featured — DevHub Toolkit
 
-<table width="100%">
+<a href="https://devhub.flinkeo.online">
+  <img src="./assets/devhub-cover.png" width="100%" alt="DevHub Toolkit — 55 developer tools, one shortcut away" />
+</a>
+
+**55+ developer utilities in one fast, privacy-friendly workspace.** Format JSON, decode JWTs, generate hashes, build gradients, convert data, and access everyday tools without jumping between tabs.
+
+- **Local-first:** tools run client-side
+- **Fast access:** command palette with `⌘K`
+- **Focused experience:** no ads, no tracking, no unnecessary signup
+- **Explore:** [devhub.flinkeo.online](https://devhub.flinkeo.online)
+
+<table>
+<tr>
+<td width="50%">
+  <img src="./assets/devhub-landing.png" width="100%" alt="DevHub Toolkit landing page" />
+</td>
+<td width="50%">
+  <img src="./assets/devhub-cmdk.png" width="100%" alt="DevHub Toolkit command palette" />
+</td>
+</tr>
+</table>
+
+<br />
+
+## Building — Renma
+
+<a href="https://renma.flinkeo.online">
+  <img src="./assets/renma-cover.png" width="100%" alt="Renma — Downloads, beautifully organized" />
+</a>
+
+**Renma** is a browser extension designed to keep downloaded images organized without turning the downloads folder into a mess. It helps maintain a clean, design-consistent image library that is easier to browse and use.
+
+→ [renma.flinkeo.online](https://renma.flinkeo.online)
+
+<br />
+
+## More Projects
+
+<table>
 <tr>
 <td width="50%" valign="top">
 
-#### B2B-v1
-<sub>`TypeScript · Node.js · PostgreSQL`</sub>
+### B2B-v1
 
-A unified B2B management platform — client relationships, invoicing, and team workflows in one system.
+A B2B management platform for client relations, invoicing, and team workflows.
 
-<sub>→ [source](https://github.com/abushaidislam/B2B-v1)</sub>
+`TypeScript` `Node.js` `PostgreSQL`
+
+[View source →](https://github.com/abushaidislam/B2B-v1)
 
 </td>
 <td width="50%" valign="top">
 
-#### Uptime Monitor
-<sub>`TypeScript · Vercel`</sub>
+### Uptime Monitor
 
-Real-time service monitoring with response tracking and instant downtime alerts.
+Real-time service monitoring with response tracking and downtime alerts.
 
-<sub>→ [source](https://github.com/abushaidislam/Uptime) · [live](https://uptime.flinkeo.online)</sub>
+`TypeScript` `Monitoring` `Vercel`
+
+[View source →](https://github.com/abushaidislam/Uptime) · [Live →](https://uptime.flinkeo.online)
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-#### Readoft
-<sub>`Next.js · TypeScript · MongoDB`</sub>
+### Readoft
 
-A modern education platform focused on accessible learning and structured content delivery.
+An education platform focused on accessible learning and structured content delivery.
 
-<sub>→ [profile](https://github.com/abushaidislam)</sub>
+`Next.js` `TypeScript` `MongoDB`
+
+[GitHub →](https://github.com/abushaidislam)
 
 </td>
 <td width="50%" valign="top">
 
-#### DMailova
-<sub>`React · TypeScript · Node.js`</sub>
+### DMailova
 
-An email marketing platform for campaigns, analytics, and automated communication flows.
+An email marketing platform for campaigns, analytics, and automated flows.
 
-<sub>→ [profile](https://github.com/abushaidislam)</sub>
+`React` `TypeScript` `Node.js`
+
+[GitHub →](https://github.com/abushaidislam)
 
 </td>
 </tr>
@@ -100,33 +138,28 @@ An email marketing platform for campaigns, analytics, and automated communicatio
 
 <br />
 
-### — Activity
+## Now
 
-<p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=abushaidislam&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=9E9E9E&icon_color=FFFFFF" alt="GitHub stats" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=abushaidislam&layout=compact&langs_count=8&hide_border=true&bg_color=00000000&title_color=FFFFFF&text_color=9E9E9E" alt="Top languages" />
-</p>
-
-<p align="center">
-  <img width="96%" src="https://github-readme-activity-graph.vercel.app/graph?username=abushaidislam&bg_color=00000000&color=FFFFFF&line=FFFFFF&point=9E9E9E&area=true&area_color=1A1A1A&hide_border=true&custom_title=Contribution%20Graph" alt="Contribution graph" />
-</p>
-
-<br />
-
-### — Direction
-
-```
-[x]  Launch B2B-v1 MVP
-[ ]  Ship DMailova beta
-[ ]  Grow Readoft to 100+ users
-[ ]  Integrate AI into production apps
-[ ]  Contribute to open source, meaningfully
-[ ]  Launch a SaaS with paying users
-[ ]  Expand deployments beyond Vercel to AWS
-```
+- [x] Launch B2B-v1 MVP
+- [x] Build the first version of DevHub Toolkit
+- [ ] Expand DevHub's utility collection
+- [ ] Build and launch the Renma extension
+- [ ] Ship DMailova beta
+- [ ] Integrate AI into production applications
+- [ ] Launch a SaaS product with paying users
 
 <br />
 
 <p align="center">
-  <sub><b>DHAKA · BANGLADESH</b> — building for the world.</sub>
+  <b>Building from Dhaka for the world.</b>
+  <br /><br />
+  <a href="https://portfolio.flinkeo.online">Portfolio</a>
+  &nbsp;·&nbsp;
+  <a href="https://studio.flinkeo.online">Studio</a>
+  &nbsp;·&nbsp;
+  <a href="https://devhub.flinkeo.online">DevHub</a>
+  &nbsp;·&nbsp;
+  <a href="https://renma.flinkeo.online">Renma</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:abushaidislam7@gmail.com">Email</a>
 </p>
