@@ -1,0 +1,43 @@
+<svg width="1200" height="340" viewBox="0 0 1200 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abushaid Islam — Full-Stack Developer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#000000"/>
+      <stop offset="0.5" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="340" fill="url(#bg)"/>
+
+  <!-- subtle grid dots -->
+  <g fill="#1C1C1C">
+    <circle cx="1050" cy="70"  r="2"/>
+    <circle cx="1090" cy="70"  r="2"/>
+    <circle cx="1130" cy="70"  r="2"/>
+    <circle cx="1050" cy="110" r="2"/>
+    <circle cx="1090" cy="110" r="2"/>
+    <circle cx="1130" cy="110" r="2"/>
+    <circle cx="1050" cy="150" r="2"/>
+    <circle cx="1090" cy="150" r="2"/>
+    <circle cx="1130" cy="150" r="2"/>
+  </g>
+
+  <!-- left accent bar -->
+  <rect x="90" y="120" width="4" height="100" fill="#FFFFFF"/>
+
+  <!-- name -->
+  <text x="120" y="162" fill="#FFFFFF" font-family="'Helvetica Neue', Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="1">Abushaid Islam</text>
+
+  <!-- role -->
+  <text x="122" y="205" fill="#8A8A8A" font-family="'SFMono-Regular', Menlo, Consolas, monospace" font-size="20" letter-spacing="4">FULL-STACK DEVELOPER · TYPESCRIPT · AI</text>
+
+  <!-- location tag -->
+  <text x="122" y="250" fill="#5A5A5A" font-family="'SFMono-Regular', Menlo, Consolas, monospace" font-size="15" letter-spacing="2">Dhaka, Bangladesh</text>
+
+  <!-- bottom gradient rule -->
+  <rect x="0" y="300" width="1200" height="2" fill="url(#line)" opacity="0.5"/>
+</svg>
