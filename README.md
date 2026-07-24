@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <a href="https://portfolio.flinkeo.online"><b>PORTFOLIO</b></a>
+  <a href="https://syed.flinkeo.online"><b>PORTFOLIO</b></a>
   &nbsp;·&nbsp;
   <a href="https://linkedin.com/in/abushaidislam"><b>LINKEDIN</b></a>
   &nbsp;·&nbsp;
