@@ -4,7 +4,7 @@
 <!-- ===================================================================== -->
 
 <p align="center">
-  <img src="./assets/header.svg" width="100%" alt="Abushaid Islam — Full-Stack Developer" />
+  <img src="./assets/hero.png" width="100%" alt="Abushaid Islam — Full-Stack Developer" />
 </p>
 
 <p align="center">
