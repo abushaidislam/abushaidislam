@@ -95,55 +95,47 @@ const abushaid = {
 ## More Projects
 
 <table>
-<tr>
-<td width="50%" valign="top">
+  <tr>
+    <td width="50%" valign="top">
+      <h3><b><a href="https://github.com/abushaidislam/B2B-v1">B2B-v1</a></b></h3>
+      <p>A B2B management platform for client relations, invoicing, and team workflows.</p>
+      <p><code>TypeScript</code> <code>Node.js</code> <code>PostgreSQL</code></p>
+      <p><a href="https://github.com/abushaidislam/B2B-v1">View source →</a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><b><a href="https://uptime.flinkeo.online">Uptime Monitor</a></b></h3>
+      <p>Real-time service monitoring with response tracking and downtime alerts.</p>
+      <p><code>TypeScript</code> <code>Monitoring</code> <code>Vercel</code></p>
+      <p><a href="https://github.com/abushaidislam/Uptime">View source →</a> · <a href="https://uptime.flinkeo.online">Live →</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><b><a href="https://devhub.flinkeo.online">DevHub Toolkit</a></b></h3>
+      <p>55+ developer utilities in one fast, privacy-friendly workspace without jumping tabs.</p>
+      <p><code>TypeScript</code> <code>React</code> <code>Tailwind</code></p>
+      <p><a href="https://devhub.flinkeo.online">Live →</a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><b><a href="https://github.com/abushaidislam">Readoft</a></b></h3>
+      <p>An education platform focused on accessible learning and structured content delivery.</p>
+      <p><code>Next.js</code> <code>TypeScript</code> <code>MongoDB</code></p>
+      <p><a href="https://github.com/abushaidislam">GitHub →</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><b><a href="https://github.com/abushaidislam">DMailova</a></b></h3>
+      <p>An email marketing platform for campaigns, analytics, and automated flows.</p>
+      <p><code>React</code> <code>TypeScript</code> <code>Node.js</code></p>
+      <p><a href="https://github.com/abushaidislam">GitHub →</a></p>
+    </td>
+    <td width="50%" valign="top">
 
-### B2B-v1
-
-A B2B management platform for client relations, invoicing, and team workflows.
-
-`TypeScript` `Node.js` `PostgreSQL`
-
-[View source →](https://github.com/abushaidislam/B2B-v1)
-
-</td>
-<td width="50%" valign="top">
-
-### Uptime Monitor
-
-Real-time service monitoring with response tracking and downtime alerts.
-
-`TypeScript` `Monitoring` `Vercel`
-
-[View source →](https://github.com/abushaidislam/Uptime) · [Live →](https://uptime.flinkeo.online)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### Readoft
-
-An education platform focused on accessible learning and structured content delivery.
-
-`Next.js` `TypeScript` `MongoDB`
-
-[GitHub →](https://github.com/abushaidislam)
-
-</td>
-<td width="50%" valign="top">
-
-### DMailova
-
-An email marketing platform for campaigns, analytics, and automated flows.
-
-`React` `TypeScript` `Node.js`
-
-[GitHub →](https://github.com/abushaidislam)
-
-</td>
-</tr>
+    </td>
+  </tr>
 </table>
+
 
 <br />
 
