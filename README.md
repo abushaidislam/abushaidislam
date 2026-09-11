@@ -1,8 +1,4 @@
-
-<p align="center">
-  <img src="./assets/banner.png" width="100%" alt="Abushaid Islam — Full-Stack Developer" />
-</p>
-
+![Banner](assets/banner.png)
 <p align="center">
   <a href="https://syed.flinkeo.online"><b>PORTFOLIO</b></a>
   &nbsp;·&nbsp;
@@ -35,8 +31,8 @@ const abushaid = {
 ## GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=abushaidislam&show_icons=true&theme=transparent&hide_border=true&title_color=007ACC&icon_color=007ACC&text_color=777" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abushaidislam&layout=compact&theme=transparent&hide_border=true&title_color=007ACC&text_color=777" alt="Top Languages" />
+  <img src="https://github-readme-stats-anuraghazra1.vercel.app/api?username=abushaidislam&show_icons=true&theme=transparent&hide_border=true&title_color=007ACC&icon_color=007ACC&text_color=777" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-anuraghazra1.vercel.app/api/top-langs/?username=abushaidislam&layout=compact&theme=transparent&hide_border=true&title_color=007ACC&text_color=777" alt="Top Languages" />
 </p>
 
 <br />
