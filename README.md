@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="./assets/hero.png" width="100%" alt="Abushaid Islam — Full-Stack Developer" />
+  <img src="./assets/banner.png" width="100%" alt="Abushaid Islam — Full-Stack Developer" />
 </p>
 
 <p align="center">
