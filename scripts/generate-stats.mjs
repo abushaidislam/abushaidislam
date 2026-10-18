@@ -19,13 +19,33 @@ const LANGUAGE_COLORS = {
   Rust: '#dea584',
 };
 
-// Tech stack with SVG simple chips
+// Official / recognizable brand colors for tech dots
+const TECH_BRAND_COLORS = {
+  TypeScript: '#3178c6',
+  JavaScript: '#f7df1e',
+  HTML5: '#e34f26',
+  CSS3: '#1572b6',
+  React: '#61dafb',
+  'Next.js': '#ffffff',
+  'Tailwind CSS': '#38bdf8',
+  'Node.js': '#5fa04e',
+  'REST APIs': '#00bcd4',
+  PostgreSQL: '#4169e1',
+  MongoDB: '#47a248',
+  Redis: '#dc382d',
+  AWS: '#ff9900',
+  Vercel: '#ffffff',
+  Docker: '#2496ed',
+  Linux: '#fcc624',
+};
+
+// Tech stack grouped with category accent colors
 const TECH_STACK = [
-  { category: "Languages", items: ["TypeScript", "JavaScript", "HTML5", "CSS3"] },
-  { category: "Frontend", items: ["React", "Next.js", "Tailwind CSS"] },
-  { category: "Backend", items: ["Node.js", "REST APIs"] },
-  { category: "Data", items: ["PostgreSQL", "MongoDB", "Redis"] },
-  { category: "Infra", items: ["AWS", "Vercel", "Docker", "Linux"] }
+  { category: "Languages", color: "#58a6ff", items: ["TypeScript", "JavaScript", "HTML5", "CSS3"] },
+  { category: "Frontend", color: "#bc8cff", items: ["React", "Next.js", "Tailwind CSS"] },
+  { category: "Backend", color: "#3fb950", items: ["Node.js", "REST APIs"] },
+  { category: "Data & Storage", color: "#f0883e", items: ["PostgreSQL", "MongoDB", "Redis"] },
+  { category: "Cloud & Infra", color: "#79c0ff", items: ["AWS", "Vercel", "Docker", "Linux"] }
 ];
 
 function formatNumber(num) {
@@ -120,6 +140,68 @@ async function fetchStats() {
   return { stars, commits, prs, issues, contributed, topLangs };
 }
 
+function renderTechBentoCards() {
+  // Grid coordinates layout:
+  // Row 1: 3 cards (x: 30, 308, 586, width: 264, y: 474, height: 94)
+  // Row 2: 2 cards (x: 30, 447, width: 403, y: 578, height: 94)
+  const cardLayouts = [
+    { x: 30,  y: 474, w: 264, h: 94 },
+    { x: 308, y: 474, w: 264, h: 94 },
+    { x: 586, y: 474, w: 264, h: 94 },
+    { x: 30,  y: 578, w: 403, h: 94 },
+    { x: 447, y: 578, w: 403, h: 94 }
+  ];
+
+  return TECH_STACK.map((group, idx) => {
+    const layout = cardLayouts[idx];
+    const { x, y, w, h } = layout;
+
+    // Render chips with auto line-wrap
+    let curX = x + 12;
+    let curY = y + 36;
+    const chipHeight = 22;
+    const gapX = 6;
+    const gapY = 6;
+
+    const chipsSvg = group.items.map(item => {
+      const itemColor = TECH_BRAND_COLORS[item] || '#8b949e';
+      const textWidth = Math.round(item.length * 6.6 + 28);
+      
+      // Auto wrap if chip exceeds card boundary
+      if (curX + textWidth > x + w - 12) {
+        curX = x + 12;
+        curY += chipHeight + gapY;
+      }
+
+      const chip = `
+        <g transform="translate(${curX}, ${curY})">
+          <rect width="${textWidth}" height="${chipHeight}" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="${itemColor}"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">${item}</text>
+        </g>`;
+      curX += textWidth + gapX;
+      return chip;
+    }).join('');
+
+    return `
+      <!-- Card ${group.category} -->
+      <g>
+        <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.2"/>
+        
+        <!-- Header -->
+        <circle cx="${x + 16}" cy="${y + 18}" r="4" fill="${group.color}"/>
+        <text x="${x + 28}" y="${y + 22}" fill="#e6edf3" font-size="11" font-weight="700" letter-spacing="0.8">${group.category.toUpperCase()}</text>
+        <text x="${x + w - 14}" y="${y + 22}" text-anchor="end" fill="#6e7681" font-size="10" font-weight="600">${group.items.length} tools</text>
+        
+        <!-- Divider inside card -->
+        <line x1="${x + 12}" y1="${y + 28}" x2="${x + w - 12}" y2="${y + 28}" stroke="#1f242c" stroke-width="1"/>
+
+        <!-- Chips -->
+        ${chipsSvg}
+      </g>`;
+  }).join('');
+}
+
 function generateSVG(data) {
   const { grade, progress } = calculateRank(data);
   const radius = 72;
@@ -150,29 +232,8 @@ function generateSVG(data) {
       </g>`;
   }).join('');
 
-  // Tech Stack Rows rendering inside bottom bento area
-  let stackY = 490;
-  const stackRows = TECH_STACK.map((row) => {
-    let chipX = 145;
-    const chips = row.items.map(item => {
-      const chipW = item.length * 8 + 18;
-      const chip = `
-        <g transform="translate(${chipX}, ${stackY - 14})">
-          <rect width="${chipW}" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="${chipW / 2}" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">${item}</text>
-        </g>`;
-      chipX += chipW + 8;
-      return chip;
-    }).join('');
-
-    const rowMarkup = `
-      <g>
-        <text x="35" y="${stackY}" fill="#8b949e" font-size="12" font-weight="600" letter-spacing="1">${row.category.toUpperCase()}</text>
-        ${chips}
-      </g>`;
-    stackY += 34;
-    return rowMarkup;
-  }).join('');
+  // Bottom Bento Tech Stack Grid
+  const bentoTechCards = renderTechBentoCards();
 
   return `<svg width="880" height="690" viewBox="0 0 880 690" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
@@ -207,7 +268,7 @@ function generateSVG(data) {
     .lbl { font-size: 11.5px; font-weight: 600; fill: #8b949e; letter-spacing: 1.5px; }
   </style>
 
-  <!-- Container -->
+  <!-- Main Container -->
   <rect x="1" y="1" width="878" height="688" rx="14" fill="#0b0d11" stroke="#21262d" stroke-width="1.8"/>
 
   <!-- Bento Divider Lines -->
@@ -264,11 +325,17 @@ function generateSVG(data) {
     <!-- Language Legend -->
     ${legendItems}
 
-    <!-- Bottom Bento Section: Tech Stack -->
-    <g transform="translate(0, 5)">
-      <text x="35" y="462" fill="#58a6ff" font-size="13" font-weight="700" letter-spacing="1.5">TECH STACK &amp; TOOLS</text>
-      ${stackRows}
+    <!-- Bottom Bento Section: Tech Stack & Tools -->
+    <g transform="translate(30, 458)">
+      <!-- Section Tag Icon -->
+      <rect x="0" y="-12" width="16" height="16" rx="4" fill="#1f6feb22" stroke="#1f6feb" stroke-width="1"/>
+      <path d="M4 -5 L7 -3 L4 -1 M8 -1 L12 -1" stroke="#58a6ff" stroke-width="1.2" stroke-linecap="round"/>
+      <text x="24" y="0" fill="#58a6ff" font-size="12" font-weight="700" letter-spacing="1.2">TECH STACK &amp; TOOLS</text>
+      <text x="180" y="0" fill="#6e7681" font-size="11" font-weight="500">Core technologies &amp; ecosystem</text>
     </g>
+
+    <!-- Mini Bento Grid Cards -->
+    ${bentoTechCards}
   </g>
 </svg>`;
 }
