@@ -48,6 +48,16 @@ const TECH_STACK = [
   { id: '05', category: 'CLOUD & INFRA', code: 'OPS_MESH', color: '#ff7b72', items: ['AWS', 'Vercel', 'Docker', 'Linux'] },
 ];
 
+// XML Safe Escaping Helper (Prevents SVG parsing errors on &, <, >)
+function escapeXml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 function formatNumber(num) {
   if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
   return num.toString();
@@ -165,8 +175,8 @@ function renderTechBentoCards() {
     const chipsSvg = group.items
       .map((item) => {
         const itemColor = TECH_BRAND_COLORS[item] || '#8b949e';
-        // Precise monospace/sans width estimation for sharp keycaps
         const textWidth = Math.round(item.length * 6.8 + 24);
+        const safeItem = escapeXml(item);
 
         if (curX + textWidth > x + w - 12) {
           curX = x + 12;
@@ -182,7 +192,7 @@ function renderTechBentoCards() {
           <!-- Left Brand Color Hard Bar -->
           <rect x="0.6" y="0.6" width="4.5" height="${chipHeight - 1.2}" fill="${itemColor}" />
           <!-- Tech Label -->
-          <text x="12" y="14.5" fill="#f0f6fc" font-size="10.5" font-weight="700" letter-spacing="0.2">${item}</text>
+          <text x="12" y="14.5" fill="#f0f6fc" font-size="10.5" font-weight="700" letter-spacing="0.2">${safeItem}</text>
         </g>`;
 
         curX += textWidth + gapX;
@@ -190,10 +200,12 @@ function renderTechBentoCards() {
       })
       .join('');
 
-    const headerBadgeWidth = group.category.length * 7.2 + 16;
+    // Calculate width using raw string length before XML escaping
+    const headerBadgeWidth = Math.round(group.category.length * 7.4 + 16);
+    const safeCategory = escapeXml(group.category);
 
     return `
-      <!-- Brutalist Bento Card: ${group.category} -->
+      <!-- Brutalist Bento Card: ${safeCategory} -->
       <g>
         <!-- Hard Offset Brutalist Shadow (Solid Color Accent + Black Base) -->
         <rect x="${x + 5}" y="${y + 5}" width="${w}" height="${h}" rx="3" fill="#020408" stroke="${group.color}" stroke-width="1" stroke-opacity="0.45" />
@@ -207,7 +219,7 @@ function renderTechBentoCards() {
 
         <!-- Solid Inverted Category Tag -->
         <rect x="${x}" y="${y}" width="${headerBadgeWidth}" height="28" fill="${group.color}" />
-        <text x="${x + 8}" y="${y + 18}" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">${group.category}</text>
+        <text x="${x + 8}" y="${y + 18}" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">${safeCategory}</text>
 
         <!-- Industrial Telemetry Metadata -->
         <text x="${x + w - 10}" y="${y + 18}" text-anchor="end" class="mono" fill="#8b949e" font-size="9.5" font-weight="700">[${group.id}//${group.items.length}]</text>
@@ -249,7 +261,7 @@ function generateSVG(data) {
       return `
       <g transform="translate(${x}, ${y})">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="${lang.color}" />
-        <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">${lang.name}</text>
+        <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">${escapeXml(lang.name)}</text>
         <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">${lang.percent.toFixed(1)}%</text>
       </g>`;
     })
