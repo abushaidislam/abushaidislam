@@ -31,7 +31,7 @@
     .lbl { font-size: 11.5px; font-weight: 600; fill: #8b949e; letter-spacing: 1.5px; }
   </style>
 
-  <!-- Container -->
+  <!-- Main Container -->
   <rect x="1" y="1" width="878" height="688" rx="14" fill="#0b0d11" stroke="#21262d" stroke-width="1.8"/>
 
   <!-- Bento Divider Lines -->
@@ -58,7 +58,7 @@
     <text x="330" y="170" text-anchor="middle" class="num">2.5k</text>
     <text x="330" y="196" text-anchor="middle" class="lbl">COMMITS</text>
 
-    <text x="110" y="275" text-anchor="middle" class="num">347</text>
+    <text x="110" y="275" text-anchor="middle" class="num">348</text>
     <text x="110" y="301" text-anchor="middle" class="lbl">PRs</text>
 
     <text x="330" y="275" text-anchor="middle" class="num">15</text>
@@ -84,7 +84,7 @@
     <g class="lang-bar" clip-path="url(#bar-clip)">
       <rect x="475.0" y="325" width="131.2" height="10" fill="#3178c6" />
       <rect x="606.2" y="325" width="101.3" height="10" fill="#fcb32c" />
-      <rect x="707.6" y="325" width="51.8" height="10" fill="#f1e05a" />
+      <rect x="707.5" y="325" width="51.8" height="10" fill="#f1e05a" />
       <rect x="759.3" y="325" width="36.1" height="10" fill="#67b8de" />
       <rect x="795.4" y="325" width="15.0" height="10" fill="#663399" />
     </g>
@@ -117,94 +117,171 @@
         <text x="100" y="0" fill="#8b949e" font-size="12" font-weight="500">4.3%</text>
       </g>
 
-    <!-- Bottom Bento Section: Tech Stack -->
-    <g transform="translate(0, 5)">
-      <text x="35" y="462" fill="#58a6ff" font-size="13" font-weight="700" letter-spacing="1.5">TECH STACK &amp; TOOLS</text>
-      
-      <g>
-        <text x="35" y="490" fill="#8b949e" font-size="12" font-weight="600" letter-spacing="1">LANGUAGES</text>
-        
-        <g transform="translate(145, 476)">
-          <rect width="98" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="49" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">TypeScript</text>
-        </g>
-        <g transform="translate(251, 476)">
-          <rect width="98" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="49" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">JavaScript</text>
-        </g>
-        <g transform="translate(357, 476)">
-          <rect width="58" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="29" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">HTML5</text>
-        </g>
-        <g transform="translate(423, 476)">
-          <rect width="50" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="25" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">CSS3</text>
-        </g>
-      </g>
-      <g>
-        <text x="35" y="524" fill="#8b949e" font-size="12" font-weight="600" letter-spacing="1">FRONTEND</text>
-        
-        <g transform="translate(145, 510)">
-          <rect width="58" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="29" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">React</text>
-        </g>
-        <g transform="translate(211, 510)">
-          <rect width="74" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="37" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">Next.js</text>
-        </g>
-        <g transform="translate(293, 510)">
-          <rect width="114" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="57" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">Tailwind CSS</text>
-        </g>
-      </g>
-      <g>
-        <text x="35" y="558" fill="#8b949e" font-size="12" font-weight="600" letter-spacing="1">BACKEND</text>
-        
-        <g transform="translate(145, 544)">
-          <rect width="74" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="37" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">Node.js</text>
-        </g>
-        <g transform="translate(227, 544)">
-          <rect width="90" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="45" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">REST APIs</text>
-        </g>
-      </g>
-      <g>
-        <text x="35" y="592" fill="#8b949e" font-size="12" font-weight="600" letter-spacing="1">DATA</text>
-        
-        <g transform="translate(145, 578)">
-          <rect width="98" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="49" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">PostgreSQL</text>
-        </g>
-        <g transform="translate(251, 578)">
-          <rect width="74" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="37" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">MongoDB</text>
-        </g>
-        <g transform="translate(333, 578)">
-          <rect width="58" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="29" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">Redis</text>
-        </g>
-      </g>
-      <g>
-        <text x="35" y="626" fill="#8b949e" font-size="12" font-weight="600" letter-spacing="1">INFRA</text>
-        
-        <g transform="translate(145, 612)">
-          <rect width="42" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="21" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">AWS</text>
-        </g>
-        <g transform="translate(195, 612)">
-          <rect width="66" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="33" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">Vercel</text>
-        </g>
-        <g transform="translate(269, 612)">
-          <rect width="66" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="33" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">Docker</text>
-        </g>
-        <g transform="translate(343, 612)">
-          <rect width="58" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <text x="29" y="15" text-anchor="middle" fill="#c9d1d9" font-size="11" font-weight="500">Linux</text>
-        </g>
-      </g>
+    <!-- Bottom Bento Section: Tech Stack & Tools -->
+    <g transform="translate(30, 458)">
+      <!-- Section Tag Icon -->
+      <rect x="0" y="-12" width="16" height="16" rx="4" fill="#1f6feb22" stroke="#1f6feb" stroke-width="1"/>
+      <path d="M4 -5 L7 -3 L4 -1 M8 -1 L12 -1" stroke="#58a6ff" stroke-width="1.2" stroke-linecap="round"/>
+      <text x="24" y="0" fill="#58a6ff" font-size="12" font-weight="700" letter-spacing="1.2">TECH STACK &amp; TOOLS</text>
+      <text x="180" y="0" fill="#6e7681" font-size="11" font-weight="500">Core technologies &amp; ecosystem</text>
     </g>
+
+    <!-- Mini Bento Grid Cards -->
+    
+      <!-- Card Languages -->
+      <g>
+        <rect x="30" y="474" width="264" height="94" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.2"/>
+        
+        <!-- Header -->
+        <circle cx="46" cy="492" r="4" fill="#58a6ff"/>
+        <text x="58" y="496" fill="#e6edf3" font-size="11" font-weight="700" letter-spacing="0.8">LANGUAGES</text>
+        <text x="280" y="496" text-anchor="end" fill="#6e7681" font-size="10" font-weight="600">4 tools</text>
+        
+        <!-- Divider inside card -->
+        <line x1="42" y1="502" x2="282" y2="502" stroke="#1f242c" stroke-width="1"/>
+
+        <!-- Chips -->
+        
+        <g transform="translate(42, 510)">
+          <rect width="94" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#3178c6"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">TypeScript</text>
+        </g>
+        <g transform="translate(142, 510)">
+          <rect width="94" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#f7df1e"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">JavaScript</text>
+        </g>
+        <g transform="translate(42, 538)">
+          <rect width="61" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#e34f26"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">HTML5</text>
+        </g>
+        <g transform="translate(109, 538)">
+          <rect width="54" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#1572b6"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">CSS3</text>
+        </g>
+      </g>
+      <!-- Card Frontend -->
+      <g>
+        <rect x="308" y="474" width="264" height="94" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.2"/>
+        
+        <!-- Header -->
+        <circle cx="324" cy="492" r="4" fill="#bc8cff"/>
+        <text x="336" y="496" fill="#e6edf3" font-size="11" font-weight="700" letter-spacing="0.8">FRONTEND</text>
+        <text x="558" y="496" text-anchor="end" fill="#6e7681" font-size="10" font-weight="600">3 tools</text>
+        
+        <!-- Divider inside card -->
+        <line x1="320" y1="502" x2="560" y2="502" stroke="#1f242c" stroke-width="1"/>
+
+        <!-- Chips -->
+        
+        <g transform="translate(320, 510)">
+          <rect width="61" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#61dafb"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">React</text>
+        </g>
+        <g transform="translate(387, 510)">
+          <rect width="74" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#ffffff"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">Next.js</text>
+        </g>
+        <g transform="translate(320, 538)">
+          <rect width="107" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#38bdf8"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">Tailwind CSS</text>
+        </g>
+      </g>
+      <!-- Card Backend -->
+      <g>
+        <rect x="586" y="474" width="264" height="94" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.2"/>
+        
+        <!-- Header -->
+        <circle cx="602" cy="492" r="4" fill="#3fb950"/>
+        <text x="614" y="496" fill="#e6edf3" font-size="11" font-weight="700" letter-spacing="0.8">BACKEND</text>
+        <text x="836" y="496" text-anchor="end" fill="#6e7681" font-size="10" font-weight="600">2 tools</text>
+        
+        <!-- Divider inside card -->
+        <line x1="598" y1="502" x2="838" y2="502" stroke="#1f242c" stroke-width="1"/>
+
+        <!-- Chips -->
+        
+        <g transform="translate(598, 510)">
+          <rect width="74" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#5fa04e"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">Node.js</text>
+        </g>
+        <g transform="translate(678, 510)">
+          <rect width="87" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#00bcd4"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">REST APIs</text>
+        </g>
+      </g>
+      <!-- Card Data & Storage -->
+      <g>
+        <rect x="30" y="578" width="403" height="94" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.2"/>
+        
+        <!-- Header -->
+        <circle cx="46" cy="596" r="4" fill="#f0883e"/>
+        <text x="58" y="600" fill="#e6edf3" font-size="11" font-weight="700" letter-spacing="0.8">DATA & STORAGE</text>
+        <text x="419" y="600" text-anchor="end" fill="#6e7681" font-size="10" font-weight="600">3 tools</text>
+        
+        <!-- Divider inside card -->
+        <line x1="42" y1="606" x2="421" y2="606" stroke="#1f242c" stroke-width="1"/>
+
+        <!-- Chips -->
+        
+        <g transform="translate(42, 614)">
+          <rect width="94" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#4169e1"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">PostgreSQL</text>
+        </g>
+        <g transform="translate(142, 614)">
+          <rect width="74" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#47a248"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">MongoDB</text>
+        </g>
+        <g transform="translate(222, 614)">
+          <rect width="61" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#dc382d"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">Redis</text>
+        </g>
+      </g>
+      <!-- Card Cloud & Infra -->
+      <g>
+        <rect x="447" y="578" width="403" height="94" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.2"/>
+        
+        <!-- Header -->
+        <circle cx="463" cy="596" r="4" fill="#79c0ff"/>
+        <text x="475" y="600" fill="#e6edf3" font-size="11" font-weight="700" letter-spacing="0.8">CLOUD & INFRA</text>
+        <text x="836" y="600" text-anchor="end" fill="#6e7681" font-size="10" font-weight="600">4 tools</text>
+        
+        <!-- Divider inside card -->
+        <line x1="459" y1="606" x2="838" y2="606" stroke="#1f242c" stroke-width="1"/>
+
+        <!-- Chips -->
+        
+        <g transform="translate(459, 614)">
+          <rect width="48" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#ff9900"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">AWS</text>
+        </g>
+        <g transform="translate(513, 614)">
+          <rect width="68" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#ffffff"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">Vercel</text>
+        </g>
+        <g transform="translate(587, 614)">
+          <rect width="68" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#2496ed"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">Docker</text>
+        </g>
+        <g transform="translate(661, 614)">
+          <rect width="61" height="22" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+          <circle cx="10" cy="11" r="3" fill="#fcc624"/>
+          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">Linux</text>
+        </g>
+      </g>
   </g>
 </svg>
