@@ -19,33 +19,33 @@ const LANGUAGE_COLORS = {
   Rust: '#dea584',
 };
 
-// Official / recognizable brand colors for tech dots
+// Official / recognizable brand colors for tech keycaps
 const TECH_BRAND_COLORS = {
   TypeScript: '#3178c6',
   JavaScript: '#f7df1e',
   HTML5: '#e34f26',
-  CSS3: '#1572b6',
+  CSS3: '#264de4',
   React: '#61dafb',
   'Next.js': '#ffffff',
   'Tailwind CSS': '#38bdf8',
   'Node.js': '#5fa04e',
-  'REST APIs': '#00bcd4',
+  'REST APIs': '#00e5ff',
   PostgreSQL: '#4169e1',
   MongoDB: '#47a248',
-  Redis: '#dc382d',
+  Redis: '#ff4438',
   AWS: '#ff9900',
   Vercel: '#ffffff',
   Docker: '#2496ed',
   Linux: '#fcc624',
 };
 
-// Tech stack grouped with category accent colors
+// Tech stack grouped with high-contrast Neo-Brutalist accent colors
 const TECH_STACK = [
-  { category: "Languages", color: "#58a6ff", items: ["TypeScript", "JavaScript", "HTML5", "CSS3"] },
-  { category: "Frontend", color: "#bc8cff", items: ["React", "Next.js", "Tailwind CSS"] },
-  { category: "Backend", color: "#3fb950", items: ["Node.js", "REST APIs"] },
-  { category: "Data & Storage", color: "#f0883e", items: ["PostgreSQL", "MongoDB", "Redis"] },
-  { category: "Cloud & Infra", color: "#79c0ff", items: ["AWS", "Vercel", "Docker", "Linux"] }
+  { id: '01', category: 'LANGUAGES', code: 'LNG_CORE', color: '#58a6ff', items: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
+  { id: '02', category: 'FRONTEND', code: 'UI_ENGINE', color: '#bc8cff', items: ['React', 'Next.js', 'Tailwind CSS'] },
+  { id: '03', category: 'BACKEND', code: 'SRV_NODE', color: '#3fb950', items: ['Node.js', 'REST APIs'] },
+  { id: '04', category: 'DATA & STORAGE', code: 'DB_LAYER', color: '#f0883e', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
+  { id: '05', category: 'CLOUD & INFRA', code: 'OPS_MESH', color: '#ff7b72', items: ['AWS', 'Vercel', 'Docker', 'Linux'] },
 ];
 
 function formatNumber(num) {
@@ -109,8 +109,9 @@ async function fetchStats() {
 
   const user = json.data.user;
   const stars = user.repositories.nodes.reduce((acc, repo) => acc + repo.stargazerCount, 0);
-  const commits = user.contributionsCollection.totalCommitContributions +
-                  user.contributionsCollection.restrictedContributionsCount;
+  const commits =
+    user.contributionsCollection.totalCommitContributions +
+    user.contributionsCollection.restrictedContributionsCount;
   const prs = user.pullRequests.totalCount;
   const issues = user.issues.totalCount;
   const contributed = user.repositoriesContributedTo.totalCount;
@@ -141,62 +142,80 @@ async function fetchStats() {
 }
 
 function renderTechBentoCards() {
-  // Grid coordinates layout:
-  // Row 1: 3 cards (x: 30, 308, 586, width: 264, y: 474, height: 94)
-  // Row 2: 2 cards (x: 30, 447, width: 403, y: 578, height: 94)
+  // Asymmetric Neo-Brutalist Bento Coordinates
+  // Row 1: 3 Cards | Row 2: 2 Wide Cards
   const cardLayouts = [
-    { x: 30,  y: 474, w: 264, h: 94 },
-    { x: 308, y: 474, w: 264, h: 94 },
-    { x: 586, y: 474, w: 264, h: 94 },
-    { x: 30,  y: 578, w: 403, h: 94 },
-    { x: 447, y: 578, w: 403, h: 94 }
+    { x: 26,  y: 486, w: 268, h: 102 },
+    { x: 306, y: 486, w: 268, h: 102 },
+    { x: 586, y: 486, w: 268, h: 102 },
+    { x: 26,  y: 602, w: 408, h: 96 },
+    { x: 446, y: 602, w: 408, h: 96 },
   ];
 
   return TECH_STACK.map((group, idx) => {
-    const layout = cardLayouts[idx];
-    const { x, y, w, h } = layout;
+    const { x, y, w, h } = cardLayouts[idx];
 
-    // Render chips with auto line-wrap
+    // Chip layout parameters
     let curX = x + 12;
-    let curY = y + 36;
+    let curY = y + 40;
     const chipHeight = 22;
-    const gapX = 6;
-    const gapY = 6;
+    const gapX = 8;
+    const gapY = 8;
 
-    const chipsSvg = group.items.map(item => {
-      const itemColor = TECH_BRAND_COLORS[item] || '#8b949e';
-      const textWidth = Math.round(item.length * 6.6 + 28);
-      
-      // Auto wrap if chip exceeds card boundary
-      if (curX + textWidth > x + w - 12) {
-        curX = x + 12;
-        curY += chipHeight + gapY;
-      }
+    const chipsSvg = group.items
+      .map((item) => {
+        const itemColor = TECH_BRAND_COLORS[item] || '#8b949e';
+        // Precise monospace/sans width estimation for sharp keycaps
+        const textWidth = Math.round(item.length * 6.8 + 24);
 
-      const chip = `
+        if (curX + textWidth > x + w - 12) {
+          curX = x + 12;
+          curY += chipHeight + gapY;
+        }
+
+        const chip = `
         <g transform="translate(${curX}, ${curY})">
-          <rect width="${textWidth}" height="${chipHeight}" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-          <circle cx="10" cy="11" r="3" fill="${itemColor}"/>
-          <text x="18" y="15" fill="#e6edf3" font-size="10.5" font-weight="500">${item}</text>
+          <!-- Brutalist Hard Offset Shadow for Keycap -->
+          <rect x="2.5" y="2.5" width="${textWidth}" height="${chipHeight}" rx="2" fill="#000000" />
+          <!-- Main Keycap Body -->
+          <rect width="${textWidth}" height="${chipHeight}" rx="2" fill="#13171f" stroke="#30363d" stroke-width="1.2" />
+          <!-- Left Brand Color Hard Bar -->
+          <rect x="0.6" y="0.6" width="4.5" height="${chipHeight - 1.2}" fill="${itemColor}" />
+          <!-- Tech Label -->
+          <text x="12" y="14.5" fill="#f0f6fc" font-size="10.5" font-weight="700" letter-spacing="0.2">${item}</text>
         </g>`;
-      curX += textWidth + gapX;
-      return chip;
-    }).join('');
+
+        curX += textWidth + gapX;
+        return chip;
+      })
+      .join('');
+
+    const headerBadgeWidth = group.category.length * 7.2 + 16;
 
     return `
-      <!-- Card ${group.category} -->
+      <!-- Brutalist Bento Card: ${group.category} -->
       <g>
-        <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="#0d1117" stroke="#21262d" stroke-width="1.2"/>
+        <!-- Hard Offset Brutalist Shadow (Solid Color Accent + Black Base) -->
+        <rect x="${x + 5}" y="${y + 5}" width="${w}" height="${h}" rx="3" fill="#020408" stroke="${group.color}" stroke-width="1" stroke-opacity="0.45" />
         
-        <!-- Header -->
-        <circle cx="${x + 16}" cy="${y + 18}" r="4" fill="${group.color}"/>
-        <text x="${x + 28}" y="${y + 22}" fill="#e6edf3" font-size="11" font-weight="700" letter-spacing="0.8">${group.category.toUpperCase()}</text>
-        <text x="${x + w - 14}" y="${y + 22}" text-anchor="end" fill="#6e7681" font-size="10" font-weight="600">${group.items.length} tools</text>
-        
-        <!-- Divider inside card -->
-        <line x1="${x + 12}" y1="${y + 28}" x2="${x + w - 12}" y2="${y + 28}" stroke="#1f242c" stroke-width="1"/>
+        <!-- Card Main Frame -->
+        <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="#0d1117" stroke="#30363d" stroke-width="1.5" />
 
-        <!-- Chips -->
+        <!-- Top Accent Brutalist Bar -->
+        <rect x="${x}" y="${y}" width="${w}" height="28" fill="#161b22" />
+        <line x1="${x}" y1="${y + 28}" x2="${x + w}" y2="${y + 28}" stroke="#30363d" stroke-width="1.5" />
+
+        <!-- Solid Inverted Category Tag -->
+        <rect x="${x}" y="${y}" width="${headerBadgeWidth}" height="28" fill="${group.color}" />
+        <text x="${x + 8}" y="${y + 18}" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">${group.category}</text>
+
+        <!-- Industrial Telemetry Metadata -->
+        <text x="${x + w - 10}" y="${y + 18}" text-anchor="end" class="mono" fill="#8b949e" font-size="9.5" font-weight="700">[${group.id}//${group.items.length}]</text>
+
+        <!-- Subtle Corner Crosshair -->
+        <path d="M${x + w - 8} ${y + h - 5} H${x + w - 4} M${x + w - 6} ${y + h - 7} V${y + h - 3}" stroke="${group.color}" stroke-width="1" opacity="0.6"/>
+
+        <!-- Mechanical Keycap Chips -->
         ${chipsSvg}
       </g>`;
   }).join('');
@@ -211,37 +230,53 @@ function generateSVG(data) {
   // Top Languages Bar
   const barWidth = 350;
   let currentX = 475;
-  const langBarSegments = data.topLangs.map((lang) => {
-    const w = Math.max((lang.percent / 100) * barWidth, 6);
-    const rect = `<rect x="${currentX.toFixed(1)}" y="325" width="${w.toFixed(1)}" height="10" fill="${lang.color}" />`;
-    currentX += w;
-    return rect;
-  }).join('\n      ');
+  const langBarSegments = data.topLangs
+    .map((lang) => {
+      const w = Math.max((lang.percent / 100) * barWidth, 6);
+      const rect = `<rect x="${currentX.toFixed(1)}" y="325" width="${w.toFixed(1)}" height="10" fill="${lang.color}" />`;
+      currentX += w;
+      return rect;
+    })
+    .join('\n      ');
 
   // Top Languages Legend
-  const legendItems = data.topLangs.map((lang, idx) => {
-    const col = idx % 2;
-    const row = Math.floor(idx / 2);
-    const x = col === 0 ? 475 : 660;
-    const y = 365 + row * 24;
-    return `
+  const legendItems = data.topLangs
+    .map((lang, idx) => {
+      const col = idx % 2;
+      const row = Math.floor(idx / 2);
+      const x = col === 0 ? 475 : 660;
+      const y = 365 + row * 24;
+      return `
       <g transform="translate(${x}, ${y})">
-        <circle cx="5" cy="-4" r="4.5" fill="${lang.color}" />
-        <text x="18" y="0" fill="#e6edf3" font-size="12" font-weight="500">${lang.name}</text>
-        <text x="100" y="0" fill="#8b949e" font-size="12" font-weight="500">${lang.percent.toFixed(1)}%</text>
+        <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="${lang.color}" />
+        <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">${lang.name}</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">${lang.percent.toFixed(1)}%</text>
       </g>`;
-  }).join('');
+    })
+    .join('');
 
-  // Bottom Bento Tech Stack Grid
+  // Bottom Neo-Brutalist Bento Tech Stack Grid
   const bentoTechCards = renderTechBentoCards();
 
-  return `<svg width="880" height="690" viewBox="0 0 880 690" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return `<svg width="880" height="724" viewBox="0 0 880 724" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Architectural Dot Matrix Pattern for Bento Section -->
+    <pattern id="brutalist-dots" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#21262d" />
+    </pattern>
+    <!-- Diagonal Hazard Stripe Pattern -->
+    <pattern id="diagonal-stripes" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#30363d" stroke-width="3" />
+    </pattern>
+  </defs>
+
   <style>
     .font { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .mono { font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
     
     /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
+      from { opacity: 0; transform: translateY(6px); }
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes drawRing {
@@ -253,7 +288,7 @@ function generateSVG(data) {
       to { transform: scaleX(1); }
     }
 
-    .animate-fade { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .animate-fade { animation: fadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
     .animate-ring {
       stroke-dasharray: ${circumference};
       stroke-dashoffset: ${targetDashOffset};
@@ -265,13 +300,16 @@ function generateSVG(data) {
       animation: barGrow 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
     .num { font-size: 38px; font-weight: 800; fill: #ffffff; letter-spacing: -0.5px; }
-    .lbl { font-size: 11.5px; font-weight: 600; fill: #8b949e; letter-spacing: 1.5px; }
+    .lbl { font-size: 11.5px; font-weight: 700; fill: #8b949e; letter-spacing: 1.5px; }
   </style>
 
-  <!-- Main Container -->
-  <rect x="1" y="1" width="878" height="688" rx="14" fill="#0b0d11" stroke="#21262d" stroke-width="1.8"/>
+  <!-- Main Outer Frame -->
+  <rect x="1" y="1" width="878" height="722" rx="12" fill="#0b0d11" stroke="#30363d" stroke-width="2"/>
 
-  <!-- Bento Divider Lines -->
+  <!-- Bento Lower Zone Background Matrix -->
+  <rect x="2" y="436" width="876" height="286" rx="10" fill="url(#brutalist-dots)" opacity="0.75"/>
+
+  <!-- Top Section Grid Lines -->
   <line x1="440" y1="1" x2="440" y2="435" stroke="#21262d" stroke-width="1.5"/>
   <line x1="1" y1="115" x2="440" y2="115" stroke="#21262d" stroke-width="1.5"/>
   <line x1="1" y1="220" x2="440" y2="220" stroke="#21262d" stroke-width="1.5"/>
@@ -279,8 +317,8 @@ function generateSVG(data) {
   <line x1="220" y1="115" x2="220" y2="325" stroke="#21262d" stroke-width="1.5"/>
   <line x1="440" y1="270" x2="879" y2="270" stroke="#21262d" stroke-width="1.5"/>
   
-  <!-- Stack Section Divider -->
-  <line x1="1" y1="435" x2="879" y2="435" stroke="#21262d" stroke-width="1.5"/>
+  <!-- Heavy Brutalist Divider Between Stats & Tech Stack -->
+  <line x1="1" y1="435" x2="879" y2="435" stroke="#30363d" stroke-width="2"/>
 
   <g class="font animate-fade">
     <!-- Header -->
@@ -316,7 +354,7 @@ function generateSVG(data) {
 
     <!-- Animated Progress Bar -->
     <clipPath id="bar-clip">
-      <rect x="475" y="325" width="350" height="10" rx="5" />
+      <rect x="475" y="325" width="350" height="10" rx="2" />
     </clipPath>
     <g class="lang-bar" clip-path="url(#bar-clip)">
       ${langBarSegments}
@@ -325,16 +363,26 @@ function generateSVG(data) {
     <!-- Language Legend -->
     ${legendItems}
 
-    <!-- Bottom Bento Section: Tech Stack & Tools -->
-    <g transform="translate(30, 458)">
-      <!-- Section Tag Icon -->
-      <rect x="0" y="-12" width="16" height="16" rx="4" fill="#1f6feb22" stroke="#1f6feb" stroke-width="1"/>
-      <path d="M4 -5 L7 -3 L4 -1 M8 -1 L12 -1" stroke="#58a6ff" stroke-width="1.2" stroke-linecap="round"/>
-      <text x="24" y="0" fill="#58a6ff" font-size="12" font-weight="700" letter-spacing="1.2">TECH STACK &amp; TOOLS</text>
-      <text x="180" y="0" fill="#6e7681" font-size="11" font-weight="500">Core technologies &amp; ecosystem</text>
+    <!-- ========================================== -->
+    <!-- NEO-BRUTALIST BENTO TECH STACK HEADER BAR  -->
+    <!-- ========================================== -->
+    <g transform="translate(26, 450)">
+      <!-- Brutalist Hard Shadow Badge -->
+      <rect x="3" y="3" width="172" height="22" fill="#000000" />
+      <rect x="0" y="0" width="172" height="22" fill="#58a6ff" stroke="#0d1117" stroke-width="1.2" />
+      <text x="10" y="15" fill="#090b0f" font-size="11" font-weight="900" letter-spacing="1.2">⚡ TECH_STACK.SYS</text>
+
+      <!-- Industrial Stripe Bar & Telemetry -->
+      <rect x="184" y="2" width="60" height="18" fill="url(#diagonal-stripes)" stroke="#30363d" stroke-width="1" />
+      <text x="256" y="15" class="mono" fill="#8b949e" font-size="11" font-weight="600">// ARCHITECTURE &amp; PRODUCTION TOOLING</text>
+
+      <!-- Right Status Pill -->
+      <rect x="742" y="2" width="86" height="18" rx="2" fill="#161b22" stroke="#30363d" stroke-width="1" />
+      <circle cx="753" cy="11" r="3" fill="#3fb950" />
+      <text x="762" y="14.5" class="mono" fill="#e6edf3" font-size="9.5" font-weight="700">16 ACTIVE</text>
     </g>
 
-    <!-- Mini Bento Grid Cards -->
+    <!-- Neo-Brutalist Bento Cards -->
     ${bentoTechCards}
   </g>
 </svg>`;
@@ -346,7 +394,7 @@ async function main() {
   const outDir = path.join(process.cwd(), 'assets');
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'github-stats.svg'), svg);
-  console.log('✅ Generated unified animated GitHub Stats & Stack SVG at ./assets/github-stats.svg');
+  console.log('✅ Generated Neo-Brutalist Bento GitHub Stats SVG at ./assets/github-stats.svg');
 }
 
 main();
