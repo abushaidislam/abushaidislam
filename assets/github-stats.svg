@@ -100,7 +100,7 @@
       <rect x="475.0" y="325" width="131.2" height="10" fill="#3178c6" />
       <rect x="606.2" y="325" width="101.3" height="10" fill="#fcb32c" />
       <rect x="707.5" y="325" width="51.9" height="10" fill="#f1e05a" />
-      <rect x="759.3" y="325" width="36.1" height="10" fill="#67b8de" />
+      <rect x="759.4" y="325" width="36.1" height="10" fill="#67b8de" />
       <rect x="795.4" y="325" width="15.0" height="10" fill="#663399" />
     </g>
 
@@ -166,7 +166,7 @@
         <line x1="26" y1="514" x2="294" y2="514" stroke="#30363d" stroke-width="1.5" />
 
         <!-- Solid Inverted Category Tag -->
-        <rect x="26" y="486" width="80.8" height="28" fill="#58a6ff" />
+        <rect x="26" y="486" width="83" height="28" fill="#58a6ff" />
         <text x="34" y="504" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">LANGUAGES</text>
 
         <!-- Industrial Telemetry Metadata -->
@@ -231,7 +231,7 @@
         <line x1="306" y1="514" x2="574" y2="514" stroke="#30363d" stroke-width="1.5" />
 
         <!-- Solid Inverted Category Tag -->
-        <rect x="306" y="486" width="73.6" height="28" fill="#bc8cff" />
+        <rect x="306" y="486" width="75" height="28" fill="#bc8cff" />
         <text x="314" y="504" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">FRONTEND</text>
 
         <!-- Industrial Telemetry Metadata -->
@@ -286,7 +286,7 @@
         <line x1="586" y1="514" x2="854" y2="514" stroke="#30363d" stroke-width="1.5" />
 
         <!-- Solid Inverted Category Tag -->
-        <rect x="586" y="486" width="66.4" height="28" fill="#3fb950" />
+        <rect x="586" y="486" width="68" height="28" fill="#3fb950" />
         <text x="594" y="504" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">BACKEND</text>
 
         <!-- Industrial Telemetry Metadata -->
@@ -318,7 +318,7 @@
           <text x="12" y="14.5" fill="#f0f6fc" font-size="10.5" font-weight="700" letter-spacing="0.2">REST APIs</text>
         </g>
       </g>
-      <!-- Brutalist Bento Card: DATA & STORAGE -->
+      <!-- Brutalist Bento Card: DATA &amp; STORAGE -->
       <g>
         <!-- Hard Offset Brutalist Shadow (Solid Color Accent + Black Base) -->
         <rect x="31" y="607" width="408" height="96" rx="3" fill="#020408" stroke="#f0883e" stroke-width="1" stroke-opacity="0.45" />
@@ -331,8 +331,8 @@
         <line x1="26" y1="630" x2="434" y2="630" stroke="#30363d" stroke-width="1.5" />
 
         <!-- Solid Inverted Category Tag -->
-        <rect x="26" y="602" width="116.8" height="28" fill="#f0883e" />
-        <text x="34" y="620" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">DATA & STORAGE</text>
+        <rect x="26" y="602" width="120" height="28" fill="#f0883e" />
+        <text x="34" y="620" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">DATA &amp; STORAGE</text>
 
         <!-- Industrial Telemetry Metadata -->
         <text x="424" y="620" text-anchor="end" class="mono" fill="#8b949e" font-size="9.5" font-weight="700">[04//3]</text>
@@ -373,7 +373,7 @@
           <text x="12" y="14.5" fill="#f0f6fc" font-size="10.5" font-weight="700" letter-spacing="0.2">Redis</text>
         </g>
       </g>
-      <!-- Brutalist Bento Card: CLOUD & INFRA -->
+      <!-- Brutalist Bento Card: CLOUD &amp; INFRA -->
       <g>
         <!-- Hard Offset Brutalist Shadow (Solid Color Accent + Black Base) -->
         <rect x="451" y="607" width="408" height="96" rx="3" fill="#020408" stroke="#ff7b72" stroke-width="1" stroke-opacity="0.45" />
@@ -386,8 +386,8 @@
         <line x1="446" y1="630" x2="854" y2="630" stroke="#30363d" stroke-width="1.5" />
 
         <!-- Solid Inverted Category Tag -->
-        <rect x="446" y="602" width="109.60000000000001" height="28" fill="#ff7b72" />
-        <text x="454" y="620" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">CLOUD & INFRA</text>
+        <rect x="446" y="602" width="112" height="28" fill="#ff7b72" />
+        <text x="454" y="620" fill="#090b0f" font-size="10.5" font-weight="900" letter-spacing="0.8">CLOUD &amp; INFRA</text>
 
         <!-- Industrial Telemetry Metadata -->
         <text x="844" y="620" text-anchor="end" class="mono" fill="#8b949e" font-size="9.5" font-weight="700">[05//4]</text>
