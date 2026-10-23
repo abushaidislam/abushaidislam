@@ -73,7 +73,7 @@
     <text x="330" y="170" text-anchor="middle" class="num">2.7k</text>
     <text x="330" y="196" text-anchor="middle" class="lbl">COMMITS</text>
 
-    <text x="110" y="275" text-anchor="middle" class="num">361</text>
+    <text x="110" y="275" text-anchor="middle" class="num">363</text>
     <text x="110" y="301" text-anchor="middle" class="lbl">PRs</text>
 
     <text x="330" y="275" text-anchor="middle" class="num">15</text>
@@ -97,10 +97,10 @@
       <rect x="475" y="325" width="350" height="10" rx="2" />
     </clipPath>
     <g class="lang-bar" clip-path="url(#bar-clip)">
-      <rect x="475.0" y="325" width="139.9" height="10" fill="#3178c6" />
-      <rect x="614.9" y="325" width="97.2" height="10" fill="#fcb32c" />
-      <rect x="712.1" y="325" width="49.8" height="10" fill="#f1e05a" />
-      <rect x="761.9" y="325" width="34.6" height="10" fill="#67b8de" />
+      <rect x="475.0" y="325" width="140.1" height="10" fill="#3178c6" />
+      <rect x="615.1" y="325" width="97.1" height="10" fill="#fcb32c" />
+      <rect x="712.2" y="325" width="49.7" height="10" fill="#f1e05a" />
+      <rect x="762.0" y="325" width="34.6" height="10" fill="#67b8de" />
       <rect x="796.5" y="325" width="14.5" height="10" fill="#663399" />
     </g>
 
@@ -114,7 +114,7 @@
       <g transform="translate(660, 365)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#fcb32c" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">MDX</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">27.8%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">27.7%</text>
       </g>
       <g transform="translate(475, 389)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#f1e05a" />
