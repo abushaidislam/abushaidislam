@@ -97,11 +97,11 @@
       <rect x="475" y="325" width="350" height="10" rx="2" />
     </clipPath>
     <g class="lang-bar" clip-path="url(#bar-clip)">
-      <rect x="475.0" y="325" width="161.6" height="10" fill="#3178c6" />
-      <rect x="636.6" y="325" width="85.6" height="10" fill="#fcb32c" />
-      <rect x="722.2" y="325" width="45.8" height="10" fill="#f1e05a" />
-      <rect x="768.0" y="325" width="29.1" height="10" fill="#67b8de" />
-      <rect x="797.1" y="325" width="12.2" height="10" fill="#663399" />
+      <rect x="475.0" y="325" width="162.1" height="10" fill="#3178c6" />
+      <rect x="637.1" y="325" width="85.4" height="10" fill="#fcb32c" />
+      <rect x="722.5" y="325" width="45.6" height="10" fill="#f1e05a" />
+      <rect x="768.1" y="325" width="29.0" height="10" fill="#67b8de" />
+      <rect x="797.1" y="325" width="12.1" height="10" fill="#663399" />
     </g>
 
     <!-- Language Legend -->
@@ -109,17 +109,17 @@
       <g transform="translate(475, 365)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#3178c6" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">TypeScript</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">46.2%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">46.3%</text>
       </g>
       <g transform="translate(660, 365)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#fcb32c" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">MDX</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">24.5%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">24.4%</text>
       </g>
       <g transform="translate(475, 389)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#f1e05a" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">JavaScript</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">13.1%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">13.0%</text>
       </g>
       <g transform="translate(660, 389)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#67b8de" />
