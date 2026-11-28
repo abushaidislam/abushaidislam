@@ -97,11 +97,11 @@
       <rect x="475" y="325" width="350" height="10" rx="2" />
     </clipPath>
     <g class="lang-bar" clip-path="url(#bar-clip)">
-      <rect x="475.0" y="325" width="165.8" height="10" fill="#3178c6" />
-      <rect x="640.8" y="325" width="78.9" height="10" fill="#fcb32c" />
-      <rect x="719.7" y="325" width="43.1" height="10" fill="#f1e05a" />
-      <rect x="762.8" y="325" width="26.8" height="10" fill="#67b8de" />
-      <rect x="789.6" y="325" width="14.2" height="10" fill="#663399" />
+      <rect x="475.0" y="325" width="166.5" height="10" fill="#3178c6" />
+      <rect x="641.5" y="325" width="78.6" height="10" fill="#fcb32c" />
+      <rect x="720.1" y="325" width="43.0" height="10" fill="#f1e05a" />
+      <rect x="763.1" y="325" width="26.7" height="10" fill="#67b8de" />
+      <rect x="789.8" y="325" width="14.2" height="10" fill="#663399" />
     </g>
 
     <!-- Language Legend -->
@@ -109,12 +109,12 @@
       <g transform="translate(475, 365)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#3178c6" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">TypeScript</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">47.4%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">47.6%</text>
       </g>
       <g transform="translate(660, 365)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#fcb32c" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">MDX</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">22.5%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">22.4%</text>
       </g>
       <g transform="translate(475, 389)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#f1e05a" />
@@ -124,12 +124,12 @@
       <g transform="translate(660, 389)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#67b8de" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">Liquid</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">7.7%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">7.6%</text>
       </g>
       <g transform="translate(475, 413)">
         <rect x="0" y="-9" width="8" height="8" rx="1.5" fill="#663399" />
         <text x="16" y="0" fill="#e6edf3" font-size="12" font-weight="600">CSS</text>
-        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">4.1%</text>
+        <text x="105" y="0" class="mono" fill="#8b949e" font-size="11.5" font-weight="600">4.0%</text>
       </g>
 
     <!-- ========================================== -->
